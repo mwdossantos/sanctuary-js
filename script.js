@@ -1,6 +1,6 @@
-var herbivore = [
-    "Stygimoloch", 
-    "Sinoceratops", 
+const herbivore = [
+    "Stygimoloch",
+    "Sinoceratops",
     "Ankylosaurus",
     "Brachiosaurus",
     "Apatosaurus",
@@ -9,9 +9,10 @@ var herbivore = [
     "Triceratops",
     "Stegosaurus"
 ];
-var carnivore = [
-    "Indoraptor", 
-    "Carnotaurus", 
+
+const carnivore = [
+    "Indoraptor",
+    "Carnotaurus",
     "Mosasaurus",
     "Velociraptor",
     "Baryonyx",
@@ -19,11 +20,12 @@ var carnivore = [
     "Tyrannosaurus Rex",
     "Compsognathus"
 ];
+
 // dinosaur data lists
 
-function getDinosaur(diet, randomDinosaur) {
+function getDinosaur(diet) {
 
-    randomDinosaur = diet[Math.floor(Math.random()*diet.length)];
+    var randomDinosaur = diet[Math.floor(Math.random() * diet.length)];
     // get a random dinosaur from the dietary list
 
     return randomDinosaur;
@@ -35,4 +37,4 @@ function getDinosaur(diet, randomDinosaur) {
 // carnivores will always be paired up if possible and if not they will be scattered around the
 // sanctuary.
 
-console.log(getDinosaur(carnivore));
+console.log(getDinosaur(carnivore))
