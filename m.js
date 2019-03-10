@@ -23,8 +23,9 @@ const carnivore = [
 
 var groups = [];
 
-// Class decleration for a Dinosaur
+// Class declaration for a Dinosaur
 class Dinosaur {
+
     constructor (diet) {
         this.diet = diet;
         this.name = this.pickRandomDinosaur();
@@ -34,6 +35,7 @@ class Dinosaur {
         this.sleep = 100;
     }
 
+    // pick a random dinosaur with the given diet
     pickRandomDinosaur () {
         if (this.diet == 'Herbivore') {
             return herbivore[Math.floor(Math.random() * herbivore.length)];
@@ -42,6 +44,7 @@ class Dinosaur {
         }
     }
 
+    // generate the attack and defense stats for the dinosaur
     generateStats () {
         
         return {
@@ -51,12 +54,14 @@ class Dinosaur {
     }
 }
 
+// Create a group of 5 from dinosaurs created with the Dinosaur class
 class Group {
 
     constructor () {
         this.dinosaurs = this.generateGroup();
     }
 
+    // generate the group and check if the member doesn't exist, if not, add it
     generateGroup() {
 
         var group = [];
@@ -65,16 +70,17 @@ class Group {
 
             var groupMember = new Dinosaur('Herbivore');
             
-            // checks if the next group member already exists in the group, adds if it doesn't exist
             if (!checkIfExists(group, groupMember)) {
                 group.push(groupMember);
             }
     
         }
-
+        
         return group;
+
     }
 
+    // list the newly made group of dinosaurs
     listGroup () {
         return this.dinosaurs;
     }
