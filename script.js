@@ -20,8 +20,16 @@ const carnivore = [
     "Tyrannosaurus Rex",
     "Compsognathus"
 ];
-
 // dinosaur data lists
+
+// public vars
+var health = 100;
+var hunger = 100;
+var thirst = 100;
+var sleep = 100;
+var attack = ;
+var defense = ;
+var dead = false;
 
 function getDinosaur(diet) {
 
@@ -31,10 +39,48 @@ function getDinosaur(diet) {
     return randomDinosaur;
     // return the random dinosaur for later use e.g. in the console
 
-} // this function takes a diet and returns a random dinosaur with that diet
+}
+// this function takes a diet and returns a random dinosaur with that diet
 
-// this function takes dinosaurs from the getDinosaur function and adds 5 herbivores together. 
-// carnivores will always be paired up if possible and if not they will be scattered around the
-// sanctuary.
+function createFamily() {
 
-console.log(getDinosaur(carnivore))
+    var family = [];
+    // declare the family array
+
+    for (i = 0; family.length < 5; i++) {
+
+        var familyMember = getDinosaur(herbivore);
+
+        if (!checkIfExists(family, familyMember)) {
+            family.push(familyMember);
+        }
+        // checks if the next family member already exists in the family, adds if it doesn't exist
+
+    }
+
+    return family;
+    // return the family for later use e.g. in the console
+
+}
+// this function creates a family of 5 herbivores
+
+function checkIfExists(array, item) {
+
+    for (let i = 0; i < array.length; i++) {
+
+        if (array[i] == item) {
+            return true;
+        }
+
+    }
+
+    return false;
+    
+}
+// this function checks if the item to be added to an array already exists
+
+function calculateScore(params) {
+    
+}
+
+console.log(createFamily())
